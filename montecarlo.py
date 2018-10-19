@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 #   Monte Carlo simulation of Pi
 #   Rafay Sheikh
 
@@ -10,7 +12,6 @@
 #   Pi = 4 * (points inside / points total)
 
 ##############################################
-
 # import bokeh
 import random as r
 
@@ -26,7 +27,7 @@ import math
 points_total = 1000000
 
 def main():
-    for x in range(0, points_total):
+    for _ in range(0, points_total):
         point = simulation_tick()
         update_stats()
         draw(point)
@@ -70,8 +71,7 @@ def print_summary():
     line.append("Experimental pi ====> {0:.12f}".format(experimental_pi))
     line.append("Actual pi       ====> {0:.12f}".format(math.pi))
     line.append("Residual: {0:.12f}".format(residual))
-    for l in line:
-        print(l, end="\n")
+    for l in line:  print(l, end="\n")
 
 
 def draw(point):
